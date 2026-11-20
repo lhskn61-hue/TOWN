@@ -1,0 +1,106 @@
+<!-- design: beginner-homepage-helper / theme: 숲길 초록 -->
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="도야지갈음마 내포신도시 걷기 모임. 첫 걷기는 2027년 1월 5일 오후 1시, 홍예공원에서 시작합니다.">
+  <title>도야지갈음마 | 내포신도시 걷기 모임</title>
+  <style>
+    :root {
+      --main: #2F7D5B;
+      --main-dark: #1E5A41;
+      --accent: #F2A541;
+      --bg: #F4F8F5;
+      --card: #FFFFFF;
+      --text: #1F2933;
+      --muted: #5B6675;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--text); background: var(--card); font: 18px/1.7 "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif; }
+    a { color: inherit; }
+    .wrap { width: min(960px, calc(100% - 40px)); margin: 0 auto; }
+    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 78px; }
+    .brand { font-size: 22px; font-weight: 800; text-decoration: none; letter-spacing: -.04em; }
+    .top-link { color: var(--main-dark); font-size: 16px; font-weight: 800; text-underline-offset: 5px; white-space: nowrap; }
+    .hero { position: relative; overflow: hidden; color: var(--card); background: linear-gradient(135deg, var(--main), var(--main-dark)); }
+    .hero-inner { padding: 72px 0 100px; }
+    .hero-emoji { display: inline-grid; place-items: center; width: 70px; height: 70px; margin-bottom: 24px; border-radius: 20px; background: var(--card); font-size: 36px; }
+    .hero .eyebrow { margin: 0 0 12px; font-weight: 800; }
+    h1 { max-width: 680px; margin: 0; font-size: clamp(2rem, 7vw, 3.2rem); font-weight: 800; line-height: 1.25; letter-spacing: -.055em; word-break: keep-all; }
+    .hero-lead { max-width: 680px; margin: 20px 0 30px; font-size: 21px; line-height: 1.7; word-break: keep-all; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 12px 27px; border: 0; border-radius: 999px; background: var(--main); color: var(--card); font: inherit; font-weight: 800; text-decoration: none; text-align: center; transition: background .2s ease, transform .2s ease; }
+    .button:hover { background: var(--main-dark); transform: translateY(-2px); }
+    .button:focus-visible, a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+    .hero .button { background: var(--card); color: var(--main-dark); }
+    .hero .button:hover { background: var(--accent); }
+    .wave { position: absolute; bottom: -1px; left: 0; display: block; width: 100%; height: 46px; fill: var(--bg); }
+    .information { padding: 58px 0 76px; background: var(--bg); }
+    .section-title { margin: 0 0 28px; font-size: clamp(1.7rem, 5vw, 2.35rem); line-height: 1.3; letter-spacing: -.05em; word-break: keep-all; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+    .card { min-width: 0; padding: 27px; border-radius: 20px; background: var(--card); box-shadow: 0 8px 24px rgba(0,0,0,.08); animation: rise .45s ease both; }
+    .card:nth-child(2) { animation-delay: .06s; }
+    .card:nth-child(3) { animation-delay: .12s; }
+    .icon { display: grid; place-items: center; width: 54px; height: 54px; margin-bottom: 15px; border-radius: 50%; background: var(--bg); font-size: 28px; }
+    .card-label { display: block; color: var(--muted); font-size: 16px; font-weight: 800; }
+    .card strong { display: block; margin-top: 4px; font-size: 26px; line-height: 1.4; letter-spacing: -.04em; word-break: keep-all; }
+    .note { max-width: 680px; margin: 23px 0 0; color: var(--muted); font-size: 16px; }
+    .participate { padding: 74px 0 84px; background: var(--card); }
+    .participate p { max-width: 680px; margin: 0 0 26px; word-break: keep-all; }
+    .footer { padding: 27px 0; background: var(--bg); color: var(--muted); font-size: 16px; }
+    .footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 18px; }
+    .footer strong { color: var(--text); }
+    @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 600px) {
+      .topbar { min-height: 68px; }
+      .brand { font-size: 20px; }
+      .top-link { font-size: 15px; }
+      .hero-inner { padding: 54px 0 86px; }
+      .hero-lead { font-size: 19px; }
+      .button { width: 100%; }
+      .information { padding-top: 52px; }
+      .card { padding: 24px; }
+      .card strong { font-size: 24px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .button, .card { animation: none; transition: none; } }
+  </style>
+</head>
+<body>
+  <header class="topbar wrap">
+    <a class="brand" href="#top">도야지갈음마</a>
+    <a class="top-link" href="#information">첫 걷기 안내</a>
+  </header>
+  <main>
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-inner wrap">
+        <span class="hero-emoji" aria-hidden="true">🚶</span>
+        <p class="eyebrow">내포신도시 지역주민 걷기 모임</p>
+        <h1 id="hero-title">우리 동네에서 함께 걸어요.</h1>
+        <p class="hero-lead">도야지갈음마의 첫 걷기가 열립니다.<br>내포신도시 홍예공원에서 만나요.</p>
+        <a class="button" href="https://doyaji-gareumma-walk-2027.blondslug26.chatgpt.site/#apply">온라인 신청서 작성하기</a>
+      </div>
+      <svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C240 80 480 0 720 40 S1200 80 1440 25 V80 H0 Z"/></svg>
+    </section>
+    <section class="information" id="information" aria-labelledby="information-title">
+      <div class="wrap">
+        <h2 class="section-title" id="information-title">📅 첫 걷기 안내</h2>
+        <div class="cards">
+          <article class="card"><span class="icon" aria-hidden="true">📅</span><span class="card-label">날짜와 시간</span><strong>2027년 1월 5일<br>오후 1시</strong></article>
+          <article class="card"><span class="icon" aria-hidden="true">📍</span><span class="card-label">모이는 곳</span><strong>내포신도시<br>홍예공원</strong></article>
+          <article class="card"><span class="icon" aria-hidden="true">🌿</span><span class="card-label">활동 지역</span><strong>내포신도시<br>일원</strong></article>
+        </div>
+        <p class="note">홍예공원 안의 정확한 만남 위치는 아직 안내되지 않았습니다. 이동 전에 다시 확인해 주세요.</p>
+      </div>
+    </section>
+    <section class="participate" aria-labelledby="participate-title">
+      <div class="wrap">
+        <h2 class="section-title" id="participate-title">✍️ 함께 걷고 싶으신가요?</h2>
+        <p>아래 버튼을 누르면 공개된 신청 페이지가 열립니다. 이름과 연락처를 입력해 신청할 수 있습니다.</p>
+        <a class="button" href="https://doyaji-gareumma-walk-2027.blondslug26.chatgpt.site/#apply">온라인 신청서 작성하기</a>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="wrap"><strong>도야지갈음마</strong><span>내포신도시 지역주민 걷기 모임</span></div></footer>
+</body>
+</html>
